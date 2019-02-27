@@ -1,0 +1,6 @@
+com\mitrais\jpservlet\controller\Home.class
+com\mitrais\jpservlet\controller\Login.class
+com\mitrais\jpservlet\test\BasicServlet.class
+com\mitrais\jpservlet\controller\CheckSession.class
+com\mitrais\jpservlet\controller\Logout.class
+com\mitrais\jpservlet\test\GenericServletImplementation.class

@@ -12,7 +12,7 @@ import java.util.HashMap;
 public class Login extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        req.setAttribute("login_url",req.getContextPath()+"/login");
+        req.setAttribute("baseContext",req.getContextPath());
         String name = (String) req.getSession().getAttribute("name");
         if(name != null && !name.equals("")){ // sudah login
             resp.sendRedirect(req.getContextPath()+"/");
@@ -22,6 +22,7 @@ public class Login extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        req.setAttribute("baseContext",req.getContextPath());
         if(req.getParameter("username").equals("admin") && req.getParameter("password").equals("admin")){
             req.getSession().setAttribute("name",req.getParameter("username"));
             resp.sendRedirect(req.getContextPath()+"/");
