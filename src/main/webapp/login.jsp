@@ -7,7 +7,7 @@ Login to system
 </head>
 <body>
 <section class="container">
-    <form method="post" action="login">
+    <form method="post" action="${login_url}">
         <h2 class="text-center">Login into system</h2>
         <label style="color:red"><%=request.getAttribute("error")==null?"":request.getAttribute("error")%></label>
         <div class="form-group">
