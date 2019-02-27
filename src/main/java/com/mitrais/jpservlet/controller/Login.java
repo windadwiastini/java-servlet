@@ -12,6 +12,10 @@ import java.util.HashMap;
 public class Login extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        String name = (String) req.getSession().getAttribute("name");
+        if(name != null && !name.equals("")){ // sudah login
+            resp.sendRedirect("/");
+        }
         req.getRequestDispatcher("/login.jsp").include(req, resp);
     }
 
